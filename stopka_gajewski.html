@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stopka</title>
+<script>
+    window.onload = function() {
+        if (localStorage.getItem('visitCount')) {
+            var count = parseInt(localStorage.getItem('visitCount')) + 1;
+            localStorage.setItem('visitCount', count);
+        } else {
+            localStorage.setItem('visitCount', 6);
+        }
+
+        updateCounter();
+    };
+    function updateCounter() {
+        var count = localStorage.getItem('visitCount');
+        document.getElementById('counter').innerHTML = 'Liczba odwiedzeń: ' + count;
+    }
+</script>
+</head>
+<body>
+<p align="center"><b>Stopka- Filip Gajewski 20.01.2025 </b> </p> <p align="center" id="counter">Licznik odwiedzeń: 6</p>
+
+
+
+</body>
+</html>
